@@ -1,0 +1,61 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Defines the basic scalar types"
+    },
+    "data": {
+        "types": {
+            "u8": {
+                "bits": 8,
+                "type": "int",
+                "signed": false
+            },
+            "u16": {
+                "bits": 16,
+                "type": "int",
+                "signed": false
+            },
+            "u32": {
+                "bits": 32,
+                "type": "int",
+                "signed": false
+            },
+            "u64": {
+                "bits": 64,
+                "type": "int",
+                "signed": false
+            },
+            "i8": {
+                "bits": 8,
+                "type": "int",
+                "signed": true
+            },
+            "i16": {
+                "bits": 16,
+                "type": "int",
+                "signed": true
+            },
+            "i32": {
+                "bits": 32,
+                "type": "int",
+                "signed": true
+            },
+            "i64": {
+                "bits": 64,
+                "type": "int",
+                "signed": true
+            },
+            "f32": {
+                "bits": 32,
+                "type": "float",
+                "signed": true
+            },
+            "f64": {
+                "bits": 64,
+                "type": "float",
+                "signed": true
+            },
+            "_end": null
+        }
+    }
+}

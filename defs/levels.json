@@ -1,0 +1,26 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Defines the implementation level requirements. Each level builds upon the preceding level(s)."
+    },
+    "data": {
+        "levels": {
+            "L0": {
+                "sizes": [ 8, 16, 32 ],
+                "types": [ "u8", "u16", "u32", "i8", "16", "i16", "i32" ],
+                "addr": 32
+            },
+            "L1": {
+                "types": [ "f32" ]
+            },
+            "L2": {
+                "sizes": [ 64 ],
+                "types": [ "u64","i64", "f64" ]
+            },
+            "L3": {
+                "addr": 64
+            },
+            "_end": null
+        }
+    }
+}
