@@ -369,16 +369,16 @@
                 "class": "Logical"
             },
             "BSETI_0": {
-                "sizes": [ 16, 32, 64 ],
-                "types": [ "i16", "u16", "i32", "u32", "i64", "u64" ],
+                "sizes": [ 16, 32 ],
+                "types": [ "i16", "u16", "i32", "u32" ],
                 "sizetype": true,
                 "eval": "0 != rB & (1 << #A)",
                 "class": "Logical",
                 "opA": "SmallImmediate"
             },
             "BSETI_1": {
-                "sizes": [ 32, 64 ],
-                "types": [ "i32", "u32", "i64", "u64" ],
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "eval": "0 != rB & (1 << (#A + 16))",
                 "class": "Logical",
@@ -419,16 +419,16 @@
                 "class": "Logical"
             },
             "BCLRI_0": {
-                "sizes": [ 16, 32, 64 ],
-                "types": [ "i16", "u16", "i32", "u32", "i64", "u64" ],
+                "sizes": [ 16, 32 ],
+                "types": [ "i16", "u16", "i32", "u32" ],
                 "sizetype": true,
                 "eval": "0 == rB & (1 << #A)",
                 "class": "Logical",
                 "opA": "SmallImmediate"
             },
             "BCLRI_1": {
-                "sizes": [ 32, 64 ],
-                "types": [ "i32", "u32", "i64", "u64" ],
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "eval": "0 == rB & (1 << (#A + 16))",
                 "class": "Logical",

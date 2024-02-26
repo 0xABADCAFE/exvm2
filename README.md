@@ -24,6 +24,9 @@ The instruction set has been reworked to allow more instructions to fit in the c
     - Call, Call Indirect, Call Native, Call Native Indirect
     - Push, Pop, Save, Restore
     - Min, Max
+- Comparison types enumerated:
+    - Compare and branch reduced to single operation.
+    - Conditional move operation added.
 - Support for immediate source operands for a number of arithmetic and logical operations.
 - New instructions added to the core opcode set, or moved from extension sets:
     - Load indirect scaled indexed
