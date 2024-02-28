@@ -1,0 +1,25 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Defines the basic operation classes"
+    },
+    "data": {
+        "classes": {
+            "Arithmetic": {
+            },
+            "Logical": {
+            },
+            "Conversion": {
+            },
+            "Move": {
+            },
+            "Load": {
+            },
+            "Store": {
+            },
+            "Flow": {
+            },
+            "_end": null
+        }
+    }
+}

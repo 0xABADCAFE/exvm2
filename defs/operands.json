@@ -1,0 +1,136 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Defines the basic operand byte types"
+    },
+    "data": {
+        "operands": {
+            "None": {
+                "bits": 0,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "Indicates the absence of a sub-field"
+            },
+            "DisplacementLow8": {
+                "bits": 8,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "An 8-bit signed displacement, or the low 8-bits of a 24-bit displacement"
+            },
+            "ImmediateU8": {
+                "bits": 8,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "An immediate unsigned 8-bit value"
+            },
+            "ImmediateI8": {
+                "bits": 8,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "An immediate signed 8-bit value"
+            },
+            "ImmediateI16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "An immediate signed 16-bit value"
+            },
+            "ImmediateU16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "An immediate unsigned 16-bit value"
+            },
+            "ImmediatePart16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "A 16-bit section of a larger immediate"
+            },
+            "Displacement16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "A signed 16-bit displacement"
+            },
+            "DisplacementHigh16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "The upper 16-bits of a signed 24-bit displacement"
+            },
+            "Empty4": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "Unused/Reserved nybble"
+            },
+            "VariantID": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "Nybble used to indicate a variant of a root operation"
+            },
+            "RegIndex": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "Register index that may be either a GPR or FPR, depending on context"
+            },
+            "GPRName": {
+                "bits": 4,
+                "names": [
+                    "r0", "r1",  "r2",  "r3",  "r4",  "r5",  "r6",  "r7",
+                    "r8", "r9", "r10", "r11", "r12", "r13", "r14", "r15"
+                ],
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "General Purpose Register (integer / address) only"
+            },
+            "FPRName": {
+                "bits": 4,
+                "names": [
+                    "f0", "f1",  "f2",  "f3",  "f4",  "f5",  "f6",  "f7",
+                    "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15"
+                ],
+                "levels": ["L1", "L2", "L3"],
+                "info": "Floating Point Register only"
+
+            },
+            "SmallImmediate": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "A small immediate value encoding 16 distinct values"
+            },
+
+            "SmallImmediate<0,15>": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "A small immediate nybble value 0-15"
+            },
+            "SmallImmediate<1,16>": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "A small immediate mapping 1-16 into the nybble value 0-15"
+            },
+            "SymbolIDLow4": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "The lowest 4 bits of a 20 bit symbol ID"
+            },
+            "SymbolIDHigh16": {
+                "bits": 16,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "info": "The upper 16 bits of a 20 bit symbol ID"
+            },
+            "DivMode": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "min": 0,
+                "max": 2,
+                "names": [
+                    "div", "mod", "divmod"
+                ],
+                "info": ""
+            },
+            "DSXMode": {
+                "bits": 4,
+                "levels": ["L0", "L1", "L2", "L3"],
+                "min": 0,
+                "max": 1,
+                "names": [
+                    "push", "pop"
+                ],
+                "info": ""
+            },
+            "_end": null
+        }
+    }
+}
