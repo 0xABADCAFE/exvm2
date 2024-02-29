@@ -1,0 +1,24 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "F32_2_I8": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "opA": "FPRName",
+                "class": "Conversion"
+            },
+            "F64_2_I8": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "class": "Conversion"
+            }
+        }
+    }
+}

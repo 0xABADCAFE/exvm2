@@ -6,18 +6,25 @@
     "data": {
         "classes": {
             "Arithmetic": {
+                "desc": "Arithmetic"
             },
             "Logical": {
+                "desc": "Bitwise logical"
             },
             "Conversion": {
+                "desc": "Type conversion"
             },
             "Move": {
+                "desc": "Data movement"
             },
             "Load": {
+                "desc": "Data load"
             },
             "Store": {
+                "desc": "Data store"
             },
             "Flow": {
+                "desc": "Program flow"
             },
             "_end": null
         }

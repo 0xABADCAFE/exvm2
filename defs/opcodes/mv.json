@@ -1,0 +1,57 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "MV_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true
+            },
+            "MV_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true
+            },
+            "MV_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true
+            },
+            "MV_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true
+            },
+            "MV_F32": {
+                "level": "L1",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "opB": "FPRName"
+            },
+            "MV_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "opB": "FPRName"
+            },
+            "MVC": {
+                "unsized": true,
+                "opA": "RegIndex",
+                "opB": "RegIndex",
+                "extwords": [
+                    {
+                        "opA": "Comparison",
+                        "opB": "RegIndex",
+                        "opC": "RegIndex"
+                    }
+                ]
+            }
+        }
+    }
+}

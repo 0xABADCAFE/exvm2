@@ -1,0 +1,27 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the BRA instruction."
+    },
+    "data": {
+        "opcodes": {
+            "BRA_8": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "DisplacementLow8",
+                "opB": "None"
+            },
+            "BRA_24": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "DisplacementLow8",
+                "opB": "None",
+                "extwords": [
+                    {
+                        "opA": "DisplacementHigh16"
+                    }
+                ]
+            }
+        }
+    }
+}

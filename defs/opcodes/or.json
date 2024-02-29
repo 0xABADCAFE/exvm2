@@ -1,0 +1,124 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "OR_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Logical"
+            },
+            "OR_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Logical"
+            },
+            "OR_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Logical"
+            },
+            "OR_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Logical"
+            },
+            "ORI": {
+                "variant": true,
+                "class": "Logical",
+                "opA": "VariantID",
+                "variants": [
+                    {
+                        "types": [ "i8" ],
+                        "fitsize": 8,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI8",
+                                "opB": "ImmediateI8"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i16" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 64,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

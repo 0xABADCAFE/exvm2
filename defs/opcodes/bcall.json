@@ -1,0 +1,28 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the BCALL instruction."
+    },
+    "data": {
+        "opcodes": {
+            "BCALL_8": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "DisplacementLow8",
+                "opB": "None"
+            },
+
+            "BCALL_24": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "DisplacementLow8",
+                "opB": "None",
+                "extwords": [
+                    {
+                        "opA": "DisplacementHigh16"
+                    }
+                ]
+            }
+        }
+    }
+}

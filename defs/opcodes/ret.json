@@ -1,0 +1,13 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "RET": {
+                "unsized": true
+            }
+        }
+    }
+}

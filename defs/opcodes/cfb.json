@@ -1,0 +1,91 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "CFB": {
+                "level": "L1",
+                "variant": true,
+                "unsized": true,
+                "class": "Flow",
+                "opA": "VariantID",
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ],
+                "variants": [
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Zero"
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Normal"
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Subnormal"
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Infinite"
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Not A Number"
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "classification": "Custom"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Zero"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Normal"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Subnormal"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Infinite"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Not A Number"
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "classification": "Custom"
+                    }
+                ]
+            }
+        }
+    }
+}

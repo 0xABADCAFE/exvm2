@@ -1,0 +1,38 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the BCC instruction."
+    },
+    "data": {
+        "opcodes": {
+            "BCC_8": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "RegIndex",
+                "opB": "RegIndex",
+                "extwords": [
+                    {
+                        "opA": "Comparison",
+                        "opB": "DisplacementLow8"
+                    }
+                ]
+            },
+
+            "BCC_24": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "RegIndex",
+                "opB": "RegIndex",
+                "extwords": [
+                    {
+                        "opA": "Comparison",
+                        "opB": "DisplacementLow8"
+                    },
+                    {
+                        "opA": "DisplacementHigh16"
+                    }
+                ]
+            }
+        }
+    }
+}

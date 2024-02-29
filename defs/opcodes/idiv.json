@@ -1,0 +1,58 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "IDIV": {
+                "variant": true,
+                "class": "Arithmetic",
+                "extwords": [
+                    {
+                        "opA": "DivMode",
+                        "opB": "VariantID",
+                        "opC": "GPRName",
+                        "opD": "GPRName"
+                    }
+                ],
+                "variants": [
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "i8" ]
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "i16" ]
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "i32" ]
+                    },
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "u8" ]
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "u16" ]
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "u32" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "i64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "u64" ]
+                    }
+                ]
+            }
+        }
+    }
+}

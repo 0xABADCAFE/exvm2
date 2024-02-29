@@ -1,0 +1,14 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "RSX": {
+                "unsized": true,
+                "class": "Move"
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ASR instruction."
+    },
+    "data": {
+        "opcodes": {
+            "ASR_I8": {
+                "sizes": [ 8 ],
+                "types": [ "i8" ],
+                "class": "Arithmetic"
+            },
+            "ASR_I16": {
+                "sizes": [ 16 ],
+                "types": [ "i16" ],
+                "class": "Arithmetic"
+            },
+            "ASR_I32": {
+                "sizes": [ 32 ],
+                "types": [ "i32" ],
+                "class": "Arithmetic"
+            },
+            "ASR_I64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64" ],
+                "class": "Arithmetic"
+            },
+            "ASRQ": {
+                "unsized": true,
+                "class": "Arithmetic",
+                "opA": "SmallImmediate<1,16>"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "DBNN": {
+                "unsized": true,
+                "class": "Flow",
+                "opA": "SmallImmediate",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,189 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ADD instruction."
+    },
+    "data": {
+        "opcodes": {
+            "ADD_I8": {
+                "sizes": [ 8 ],
+                "types": [ "i8" ],
+                "class": "Arithmetic"
+            },
+            "ADD_I16": {
+                "sizes": [ 16 ],
+                "types": [ "i16" ],
+                "class": "Arithmetic"
+            },
+            "ADD_I32": {
+                "sizes": [ 32 ],
+                "types": [ "i32" ],
+                "class": "Arithmetic"
+            },
+            "ADD_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "opA": "FPRName",
+                "opB": "FPRName",
+                "class": "Arithmetic"
+            },
+            "ADD_I64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64" ],
+                "class": "Arithmetic"
+            },
+            "ADD_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "opB": "FPRName",
+                "class": "Arithmetic"
+            },
+            "ADDI": {
+                "variant": true,
+                "class": "Arithmetic",
+                "opA": "VariantID",
+                "variants": [
+                    {
+                        "types": [ "i8" ],
+                        "fitsize": 8,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI8",
+                                "opB": "ImmediateI8"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i16" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L1",
+                        "types": [ "f32" ],
+                        "fitsize": 32,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 64,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "f64" ],
+                        "fitsize": 32,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "f64" ],
+                        "fitsize": 64,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ADDQ": {
+                "unsized": true,
+                "class": "Arithmetic",
+                "opA": "SmallImmediate<1,16>"
+            }
+        }
+    }
+}

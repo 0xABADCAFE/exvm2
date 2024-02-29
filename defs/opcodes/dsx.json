@@ -1,0 +1,50 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "DSX": {
+                "variant": true,
+                "class": "Move",
+                "opA": "DSXMode",
+                "opB": "VariantID",
+                "extwords": [
+                    {
+                        "opA":"ImmediateU16"
+                    }
+                ],
+                "variants": [
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "u8", "i8" ]
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "u16", "i16" ]
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "u32", "i32" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "u64", "i64" ]
+                    },
+                    {
+                        "level": "L1",
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "DSF": {
+                "unsized": true,
+                "opA": "Empty4",
+                "class": "Move"
+            }
+        }
+    }
+}

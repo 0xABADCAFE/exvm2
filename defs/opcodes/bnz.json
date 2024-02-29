@@ -1,0 +1,57 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the BNZ instruction."
+    },
+    "data": {
+        "opcodes": {
+            "BNZ": {
+                "variant": true,
+                "class": "Flow",
+                "opA": "VariantID",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ],
+                "variants": [
+                    {
+                        "sizetype": true,
+                        "sizes": [ 8 ],
+                        "types": [ "i8", "u8" ]
+                    },
+                    {
+                        "sizetype": true,
+                        "sizes": [ 16 ],
+                        "types": [ "i16", "u16" ]
+                    },
+                    {
+                        "sizetype": true,
+                        "sizes": [ 32 ],
+                        "types": [ "i32", "u32" ]
+                    },
+                    {
+                        "level": "L1",
+                        "sizetype": false,
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "opB": "FPRName"
+                    },
+                    {
+                        "level": "L2",
+                        "sizetype": true,
+                        "sizes": [ 64 ],
+                        "types": [ "i64", "u64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizetype": false,
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "opB": "FPRName"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "CASE": {
+                "unsized": true,
+                "varlength": true,
+                "class": "Flow",
+                "extwords": [
+                    {
+                        "opA": "ImmediateU16"
+                    }
+                ]
+            }
+        }
+    }
+}

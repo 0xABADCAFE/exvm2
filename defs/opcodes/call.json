@@ -1,0 +1,39 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "CALL": {
+                "variant": true,
+                "unsized": true,
+                "class": "Flow",
+                "opA": "VariantID",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ],
+                "variants": [
+                    {
+                        "info": "Direct",
+                        "opB": "SymbolIDLow4"
+                    },
+                    {
+                        "info": "Inirect",
+                        "opB": "GPRName"
+                    },
+                    {
+                        "info": "Native",
+                        "opB": "SymbolIDLow4"
+                    },
+                    {
+                        "info": "Native Inirect",
+                        "opB": "GPRName"
+                    }
+                ]
+            }
+        }
+    }
+}

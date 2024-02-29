@@ -60,6 +60,8 @@ class Spec {
             count($this->aComparisonDefs),
             count($this->aOpcodeDefs)
         );
+
+        print_r(array_keys($this->aOpcodeDefs));
     }
 
     private function loadDef(string $str_def): \stdClass {
@@ -193,11 +195,21 @@ class Spec {
 
     private function parseOpcodeDefs(array $aDefs): array {
         $oDefaultDef = $aDefs[self::DEF_OPCODES]->data->default;
-        $aDefs       = (array)$aDefs[self::DEF_OPCODES]->data->opcodes;
-        unset($aDefs[self::DEF_LIST_END]);
+
+        $aDefs       = (array)$aDefs[self::DEF_OPCODES]->data->opcodedefs;
+        $aOpcodeDefs = [];
+        foreach ($aDefs as $sDefName) {
+            $oData = $this->loadDef('opcodes/' . $sDefName . '.json');
+            foreach ($oData->data->opcodes as $sKey => $oOpcodeDef) {
+                $aOpcodeDefs[$sKey] = $oOpcodeDef;
+            }
+        }
+
+
+        unset($aOpcodeDefs[self::DEF_LIST_END]);
 
         $aMerged = [];
-        foreach ($aDefs as $sOpcodeID => $oPartDef) {
+        foreach ($aOpcodeDefs as $sOpcodeID => $oPartDef) {
             $oOpcodeDef = clone $oDefaultDef;
             foreach ($oPartDef as $sKey => $mValue) {
                 $oOpcodeDef->{$sKey} = $mValue;
@@ -215,26 +227,40 @@ class Spec {
         return $aMerged;
     }
 
+    private function validateOperandSet(array $aOperands, int $iSize, int &$iVariantDefCount) {
+        $iBits = 0;
+        foreach ($aOperands as $sKey => $sOperandType) {
+            if (!isset($this->aOperandDefs[$sOperandType])) {
+                throw new RuntimeException('Invalid Operand Type ' . $sOperandType . ' for ' . $sKey);
+            }
+            if ($sOperandType === 'VariantID') {
+                if (++$iVariantDefCount > 1) {
+                    throw new RuntimeException('VariantID defined more than once.');
+                }
+            }
+
+            $iBits += $this->aOperandDefs[$sOperandType]->bits;
+        }
+        if ($iBits !== $iSize) {
+            throw new RuntimeException('Invalid Operand Set size ' . $iBits . ', expected ' . $iSize);
+        }
+    }
+
     private function validateOpcodeDef(string $sOpcodeID, \stdClass $oOpcodeDef) {
-        if (!isset($oOpcodeDef->opA)) {
-            throw new RuntimeException('Missing required operand A definition for ' . $sOpcodeID);
-        }
-        if (!isset($oOpcodeDef->opB)) {
-            throw new RuntimeException('Missing required operand B definition for ' . $sOpcodeID);
-        }
-        if (!isset($this->aOperandDefs[$oOpcodeDef->opA])) {
-            throw new RuntimeException('Invalid operand A definition for ' . $sOpcodeID);
-        }
-        if (!isset($this->aOperandDefs[$oOpcodeDef->opB])) {
-            throw new RuntimeException('Invalid operand B definition for ' . $sOpcodeID);
-        }
+        $iVariantDefCount = 0;
+        $this->validateOperandSet(
+            [
+                $oOpcodeDef->opA ?? null,
+                $oOpcodeDef->opB ?? null
+            ],
+            8,
+            $iVariantDefCount
+        );
 
-        $iOperandBits =
-            $this->aOperandDefs[$oOpcodeDef->opA]->bits +
-            $this->aOperandDefs[$oOpcodeDef->opB]->bits;
-
-        if ($iOperandBits !== 8) {
-            throw new RuntimeException("Total operand sizes for A/B must be exactly 8 bits for " . $sOpcodeID);
+        if (!empty($oOpcodeDef->extwords)) {
+            foreach ($oOpcodeDef->extwords as $oOperandSet) {
+                $this->validateOperandSet((array)$oOperandSet, 16, $iVariantDefCount);
+            }
         }
 
         if (!empty($oOpcodeDef->variant)) {

@@ -1,0 +1,26 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "FLOOR_F32": {
+                "level": "L1",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "opB": "FPRName",
+                "class": "Arithmetic"
+            },
+            "FLOOR_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "opA": "FPRName",
+                "opB": "FPRName",
+                "class": "Arithmetic"
+            }
+        }
+    }
+}

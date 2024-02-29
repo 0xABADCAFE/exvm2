@@ -1,0 +1,26 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "BSWP_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true
+            },
+            "BSWP_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true
+            },
+            "BSWP_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true
+            }
+        }
+    }
+}

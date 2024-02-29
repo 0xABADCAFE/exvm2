@@ -1,0 +1,472 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "LDQ": {
+                "unsized": true,
+                "class": "Load",
+                "opA": "SmallImmediate"
+            },
+
+            "LD_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+
+            "LD_DADR": {
+                "unsized": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_CSYM": {
+                "unsized": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "LD_NSYM": {
+                "unsized": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+
+            "LDI": {
+                "variant": true,
+                "class": "Load",
+                "opA": "VariantID",
+                "variants": [
+                    {
+                        "types": [ "i8" ],
+                        "fitsize": 8,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI8",
+                                "opB": "ImmediateI8"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i16" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "types": [ "i32" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L1",
+                        "types": [ "f32" ],
+                        "fitsize": 32,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 16,
+                        "extwords": [
+                            {
+                                "opA": "ImmediateI16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 32,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ],
+                        "fitsize": 64,
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "f64" ],
+                        "fitsize": 32,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "f64" ],
+                        "fitsize": 64,
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            },
+                            {
+                                "opA": "ImmediatePart16"
+                            }
+                        ]
+                    }
+                ]
+
+            },
+
+            "LD_I_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_I_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_I_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_I_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+            "LD_I_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_I_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+
+            "LD_ID_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_ID_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_ID_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_ID_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+            "LD_ID_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_ID_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+
+
+            "LD_IPD_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPD_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPD_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPD_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+            "LD_IPD_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPD_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+
+            "LD_IPI_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPI_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPI_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPI_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+            "LD_IPI_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load"
+            },
+            "LD_IPI_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opB": "FPRName"
+            },
+
+
+            "LD_II_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "Empty4",
+                "extwords": [
+
+                ]
+            },
+            "LD_II_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "Empty4"
+            },
+            "LD_II_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "Empty4"
+            },
+            "LD_II_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Load",
+                "opA": "Empty4",
+                "opB": "FPRName"
+            },
+            "LD_II_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "opA": "Empty4",
+                "class": "Load"
+            },
+            "LD_II_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Load",
+                "opA": "Empty4",
+                "opB": "FPRName"
+            }
+        }
+    }
+}

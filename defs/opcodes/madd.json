@@ -1,0 +1,64 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the MADD instruction."
+    },
+    "data": {
+        "opcodes": {
+            "MADD": {
+                "variant": true,
+                "class": "Arithmetic",
+                "opA": "Empty4",
+                "opB": "VariantID",
+                "extwords": [
+                    {
+                        "opA": "RegIndex",
+                        "opB": "RegIndex",
+                        "opC": "RegIndex",
+                        "opD": "RegIndex"
+                    }
+                ],
+                "variants": [
+                    {
+                        "types": [ "u8" ]
+                    },
+                    {
+                        "types": [ "u16" ]
+                    },
+                    {
+                        "types": [ "u32" ]
+                    },
+
+                    {
+                        "types": [ "i8" ]
+                    },
+                    {
+                        "types": [ "i16" ]
+                    },
+                    {
+                        "types": [ "i32" ]
+                    },
+
+                    {
+                        "level": "L1",
+                        "types": [ "f32" ]
+                    },
+
+                    {
+                        "level": "L2",
+                        "types": [ "u64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "i64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "types": [ "f64" ]
+                    }
+
+                ]
+            }
+        }
+    }
+}

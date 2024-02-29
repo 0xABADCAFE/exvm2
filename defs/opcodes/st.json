@@ -1,0 +1,296 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "ST_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "ST_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "ST_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "ST_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "ST_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+            "ST_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
+
+            "ST_I_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_I_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_I_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_I_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+            "ST_I_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_I_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+
+            "ST_ID_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_ID_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_ID_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_ID_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+            "ST_ID_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_ID_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+
+            "ST_IPD_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPD_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPD_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPD_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+            "ST_IPD_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPD_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+
+            "ST_IPI_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPI_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPI_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPI_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+            "ST_IPI_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store"
+            },
+            "ST_IPI_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opB": "FPRName"
+            },
+
+
+            "ST_II_8": {
+                "sizes": [ 8 ],
+                "types": [ "i8", "u8" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "Empty4",
+                "extwords": [
+
+                ]
+            },
+            "ST_II_16": {
+                "sizes": [ 16 ],
+                "types": [ "i16", "u16" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "Empty4"
+            },
+            "ST_II_32": {
+                "sizes": [ 32 ],
+                "types": [ "i32", "u32" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "Empty4"
+            },
+            "ST_II_F32": {
+                "level": "L1",
+                "sizes": [ 32 ],
+                "types": [ "f32" ],
+                "class": "Store",
+                "opA": "Empty4",
+                "opB": "FPRName"
+            },
+            "ST_II_64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "opA": "Empty4",
+                "class": "Store"
+            },
+            "ST_II_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f64" ],
+                "class": "Store",
+                "opA": "Empty4",
+                "opB": "FPRName"
+            }
+
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the ABS instruction."
+    },
+    "data": {
+        "opcodes": {
+            "U8_2_F64": {
+                "level": "L2",
+                "sizes": [ 8 ],
+                "types": [ "u8" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "U16_2_F64": {
+                "level": "L2",
+                "sizes": [ 16 ],
+                "types": [ "u16" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "U32_2_F64": {
+                "level": "L2",
+                "sizes": [ 32 ],
+                "types": [ "u32" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "U64_2_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "u64" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "I8_2_F64": {
+                "level": "L2",
+                "sizes": [ 8 ],
+                "types": [ "i8" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "I16_2_F64": {
+                "level": "L2",
+                "sizes": [ 16 ],
+                "types": [ "i16" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "I32_2_F64": {
+                "level": "L2",
+                "sizes": [ 32 ],
+                "types": [ "i32" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "I64_2_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64" ],
+                "opB": "FPRName",
+                "class": "Conversion"
+            },
+            "F32_2_F64": {
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "f32" ],
+                "opA": "FPRName",
+                "opB": "FPRName",
+                "class": "Conversion"
+            }
+        }
+    }
+}
