@@ -13,6 +13,7 @@
         },
         "comparisons": {
             "EQ_8": {
+                "form": "eq.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
@@ -20,6 +21,7 @@
                 "class": "Logical"
             },
             "EQ_16": {
+                "form": "eq.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
@@ -27,6 +29,7 @@
                 "class": "Logical"
             },
             "EQ_32": {
+                "form": "eq.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -34,6 +37,7 @@
                 "class": "Logical"
             },
             "EQ_F32": {
+                "form": "eq.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -44,6 +48,7 @@
                 "opB": "FPRName"
             },
             "EQV_F32": {
+                "form": "eqv.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -52,6 +57,7 @@
                 "opB": "FPRName"
             },
             "EQ_64": {
+                "form": "eq.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -60,6 +66,7 @@
                 "class": "Logical"
             },
             "EQ_F64": {
+                "form": "eq.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64", "f64" ],
@@ -69,6 +76,7 @@
                 "opB": "FPRName"
             },
             "EQV_F64": {
+                "form": "eqv.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -78,6 +86,7 @@
             },
 
             "NE_8": {
+                "form": "ne.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
@@ -85,6 +94,7 @@
                 "class": "Logical"
             },
             "NE_16": {
+                "form": "ne.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
@@ -92,6 +102,7 @@
                 "class": "Logical"
             },
             "NE_32": {
+                "form": "ne.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -99,6 +110,7 @@
                 "class": "Logical"
             },
             "NE_F32": {
+                "form": "ne.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -108,6 +120,7 @@
                 "opB": "FPRName"
             },
             "NE_F64": {
+                "form": "ne.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64", "f64" ],
@@ -118,48 +131,57 @@
             },
 
             "LT_U8": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "u8" ],
                 "eval": "rA < rB"
             },
             "LT_U16": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "u16" ],
                 "eval": "rA < rB"
             },
             "LT_U32": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "u32" ],
                 "eval": "rA < rB"
             },
             "LT_U64": {
+                "form": "lt.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "u64" ],
                 "eval": "rA < rB"
             },
             "LT_I8": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "eval": "rA < rB"
             },
             "LT_I16": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "eval": "rA < rB"
             },
             "LT_I32": {
+                "form": "lt.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "eval": "rA < rB"
             },
             "LT_I64": {
+                "form": "lt.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "eval": "rA < rB"
             },
             "LT_F32": {
+                "form": "lt.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -168,6 +190,7 @@
                 "opB": "FPRName"
             },
             "LT_F64": {
+                "form": "lt.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -177,48 +200,57 @@
             },
 
             "LTEQ_U8": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "u8" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_U16": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "u16" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_U32": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "u32" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_U64": {
+                "form": "le.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "u64" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_I8": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_I16": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_I32": {
+                "form": "le.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_I64": {
+                "form": "le.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "eval": "rA <= rB"
             },
             "LTEQ_F32": {
+                "form": "le.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -227,6 +259,7 @@
                 "opB": "FPRName"
             },
             "LTEQ_F64": {
+                "form": "le.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -236,48 +269,57 @@
             },
 
             "GREQ_U8": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "u8" ],
                 "eval": "rA >= rB"
             },
             "GREQ_U16": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "u16" ],
                 "eval": "rA >= rB"
             },
             "GREQ_U32": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "u32" ],
                 "eval": "rA >= rB"
             },
             "GREQ_U64": {
+                "form": "ge.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "u64" ],
                 "eval": "rA >= rB"
             },
             "GREQ_I8": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "eval": "rA >= rB"
             },
             "GREQ_I16": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "eval": "rA >= rB"
             },
             "GREQ_I32": {
+                "form": "ge.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "eval": "rA >= rB"
             },
             "GREQ_I64": {
+                "form": "ge.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "eval": "rA >= rB"
             },
             "GREQ_F32": {
+                "form": "ge.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -286,6 +328,7 @@
                 "opB": "FPRName"
             },
             "GREQ_F64": {
+                "form": "ge.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -295,48 +338,57 @@
             },
 
             "GR_U8": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "u8" ],
                 "eval": "rA > rB"
             },
             "GR_U16": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "u16" ],
                 "eval": "rA > rB"
             },
             "GR_U32": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "u32" ],
                 "eval": "rA > rB"
             },
             "GR_U64": {
+                "form": "gt.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "u64" ],
                 "eval": "rA > rB"
             },
             "GR_I8": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "eval": "rA > rB"
             },
             "GR_I16": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "eval": "rA > rB"
             },
             "GR_I32": {
+                "form": "gt.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "eval": "rA > rB"
             },
             "GR_I64": {
+                "form": "gt.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "eval": "rA > rB"
             },
             "GR_F32": {
+                "form": "gt.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -345,6 +397,7 @@
                 "opB": "FPRName"
             },
             "GR_F64": {
+                "form": "gt.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -354,6 +407,7 @@
             },
 
             "BSET_32": {
+                "form": "bs.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -361,6 +415,7 @@
                 "class": "Logical"
             },
             "BSET_64": {
+                "form": "bs.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -369,6 +424,7 @@
                 "class": "Logical"
             },
             "BSETI_0": {
+                "form": "bs.{t} #{s:0-15},{r}",
                 "sizes": [ 16, 32 ],
                 "types": [ "i16", "u16", "i32", "u32" ],
                 "sizetype": true,
@@ -377,6 +433,7 @@
                 "opA": "SmallImmediate"
             },
             "BSETI_1": {
+                "form": "bs.{t} #{s:16-31},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -385,6 +442,7 @@
                 "opA": "SmallImmediate"
             },
             "BSETI_2": {
+                "form": "bs.{t} #{s:32-47},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -394,6 +452,7 @@
                 "opA": "SmallImmediate"
             },
             "BSETI_3": {
+                "form": "bs.{t} #{s:48-63},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -404,6 +463,7 @@
             },
 
             "BCLR_32": {
+                "form": "bc.{t},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -411,6 +471,7 @@
                 "class": "Logical"
             },
             "BCLR_64": {
+                "form": "bc.{t},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -419,6 +480,7 @@
                 "class": "Logical"
             },
             "BCLRI_0": {
+                "form": "bc.{t} #{s:0-15},{r}",
                 "sizes": [ 16, 32 ],
                 "types": [ "i16", "u16", "i32", "u32" ],
                 "sizetype": true,
@@ -427,6 +489,7 @@
                 "opA": "SmallImmediate"
             },
             "BCLRI_1": {
+                "form": "bc.{t} #{s:16-31},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -435,6 +498,7 @@
                 "opA": "SmallImmediate"
             },
             "BCLR_2": {
+                "form": "bc.{t} #{s:32-47},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -444,6 +508,7 @@
                 "opA": "SmallImmediate"
             },
             "BCLR_3": {
+                "form": "bc.{t} #{s:48-63},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -454,6 +519,7 @@
             },
 
             "AND_8": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
@@ -461,6 +527,7 @@
                 "class": "Logical"
             },
             "AND_16": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
@@ -468,6 +535,7 @@
                 "class": "Logical"
             },
             "AND_32": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -475,6 +543,7 @@
                 "class": "Logical"
             },
            "AND_64": {
+                "form": "and.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],

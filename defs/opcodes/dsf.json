@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the DSF instruction."
     },
     "data": {
         "opcodes": {
             "DSF": {
+                "form": "dsf {r}",
                 "unsized": true,
                 "opA": "Empty4",
                 "class": "Move"

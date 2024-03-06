@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the RET instruction."
     },
     "data": {
         "opcodes": {
             "RET": {
+                "form": "ret #{8}",
                 "unsized": true
             }
         }

@@ -6,21 +6,25 @@
     "data": {
         "opcodes": {
             "ADD_I8": {
+                "form": "add.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "class": "Arithmetic"
             },
             "ADD_I16": {
+                "form": "add.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "class": "Arithmetic"
             },
             "ADD_I32": {
+                "form": "add.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "class": "Arithmetic"
             },
             "ADD_F32": {
+                "form": "add.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -29,12 +33,14 @@
                 "class": "Arithmetic"
             },
             "ADD_I64": {
+                "form": "add.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "class": "Arithmetic"
             },
             "ADD_F64": {
+                "form": "add.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -48,6 +54,7 @@
                 "opA": "VariantID",
                 "variants": [
                     {
+                        "form": "add.{t} #{z},{r}",
                         "types": [ "i8" ],
                         "fitsize": 8,
                         "extwords": [
@@ -58,6 +65,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "types": [ "i16" ],
                         "fitsize": 16,
                         "extwords": [
@@ -67,6 +75,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "types": [ "i32" ],
                         "fitsize": 16,
                         "extwords": [
@@ -76,6 +85,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "types": [ "i32" ],
                         "fitsize": 32,
                         "extwords": [
@@ -88,6 +98,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{fz},{r}",
                         "level": "L1",
                         "types": [ "f32" ],
                         "fitsize": 32,
@@ -102,6 +113,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 16,
@@ -112,6 +124,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 32,
@@ -125,6 +138,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 64,
@@ -144,6 +158,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{fz},{r}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 32,
@@ -158,6 +173,7 @@
                         ]
                     },
                     {
+                        "form": "add.{t} #{fz},{r}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 64,
@@ -180,6 +196,7 @@
                 ]
             },
             "ADDQ": {
+                "form": "add #{s:1-16},{r}",
                 "unsized": true,
                 "class": "Arithmetic",
                 "opA": "SmallImmediate<1,16>"

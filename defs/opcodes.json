@@ -5,6 +5,7 @@
     },
     "data": {
         "default": {
+            "form": "-",
             "level": "L0",
             "variant": false,
             "sizetype": false,
@@ -29,8 +30,7 @@
             "cfb",
             "dbnz",
             "dbnn",
-            "idiv",
-            "fdiv",
+            "div",
             "dsa",
             "dsf",
             "dsx",
@@ -40,7 +40,6 @@
             "ld",
             "lsl",
             "lsr",
-            "fmod",
             "madd",
             "mul",
             "mv",
@@ -48,7 +47,6 @@
             "or",
             "ord",
             "pow",
-            "rcp",
             "ret",
             "rol",
             "ror",

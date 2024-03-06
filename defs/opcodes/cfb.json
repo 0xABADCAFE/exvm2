@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the CFB instruction."
     },
     "data": {
         "opcodes": {
             "CFB": {
+                "form": "cfb.{t} {f},@label",
                 "level": "L1",
                 "variant": true,
                 "unsized": true,

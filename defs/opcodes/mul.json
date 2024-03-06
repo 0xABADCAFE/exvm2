@@ -1,41 +1,48 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the MUL instruction."
     },
     "data": {
         "opcodes": {
             "MUL_U8": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "u8" ],
                 "class": "Arithmetic"
             },
             "MUL_U16": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "u16" ],
                 "class": "Arithmetic"
             },
             "MUL_U32": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "u32" ],
                 "class": "Arithmetic"
             },
             "MUL_I8": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "class": "Arithmetic"
             },
             "MUL_I16": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "class": "Arithmetic"
             },
             "MUL_I32": {
+                "form": "mul.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "class": "Arithmetic"
             },
             "MUL_F32": {
+                "form": "mul.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -44,18 +51,21 @@
                 "class": "Arithmetic"
             },
             "MUL_IU64": {
+                "form": "mul.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "u64" ],
                 "class": "Arithmetic"
             },
             "MUL_I64": {
+                "form": "mul.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "class": "Arithmetic"
             },
             "MUL_F64": {
+                "form": "mul.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -65,6 +75,7 @@
             },
 
             "MULI": {
+                "form": "mul.{t} #{z},{r}",
                 "variant": true,
                 "class": "Arithmetic",
                 "opA": "VariantID",
@@ -130,6 +141,7 @@
                         ]
                     },
                     {
+                        "form": "mul.{t} #{fz},{f}",
                         "level": "L1",
                         "types": [ "f32" ],
                         "fitsize": 32,
@@ -188,6 +200,7 @@
                         ]
                     },
                     {
+                        "form": "mul.{t} #{fz},{f}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 32,
@@ -202,6 +215,7 @@
                         ]
                     },
                     {
+                        "form": "mul.{t} #{fz},{f}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 64,

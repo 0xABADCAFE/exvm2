@@ -6,16 +6,19 @@
     "data": {
         "opcodes": {
             "BSWP_16": {
+                "form": "bswp.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true
             },
             "BSWP_32": {
+                "form": "bswp.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true
             },
             "BSWP_64": {
+                "form": "bswp.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],

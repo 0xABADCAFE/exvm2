@@ -6,6 +6,7 @@
     "data": {
         "opcodes": {
             "BCALL_8": {
+                "form": "bcall @label|{d8}",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "DisplacementLow8",
@@ -13,6 +14,7 @@
             },
 
             "BCALL_24": {
+                "form": "bcall @label|{d24}",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "DisplacementLow8",

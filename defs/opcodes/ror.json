@@ -1,29 +1,33 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the ROR instruction."
     },
     "data": {
         "opcodes": {
             "ROR_8": {
+                "form": "ror.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "ROR_16": {
+                "form": "ror.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "ROR_32": {
+                "form": "ror.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "ROR_64": {
+                "form": "ror.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -31,6 +35,7 @@
                 "class": "Logical"
             },
             "RORQ": {
+                "form": "ror.{t} #{s:1-16},{r}",
                 "unsized": true,
                 "class": "Logical",
                 "opA": "SmallImmediate<1,16>"

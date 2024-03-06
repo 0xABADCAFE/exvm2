@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the X_2_I8 instruction."
     },
     "data": {
         "opcodes": {
             "F32_2_I8": {
+                "form": "i8.{t} {f},{r}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -13,6 +14,7 @@
                 "class": "Conversion"
             },
             "F64_2_I8": {
+                "form": "i8.{t} {f},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],

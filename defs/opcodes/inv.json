@@ -1,29 +1,33 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the INV instruction."
     },
     "data": {
         "opcodes": {
             "INV_8": {
+                "form": "inv.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "INV_16": {
+                "form": "inv.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "INV_32": {
+                "form": "inv.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "INV_64": {
+                "form": "inv.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],

@@ -1,29 +1,33 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the LSL instruction."
     },
     "data": {
         "opcodes": {
             "LSL_8": {
+                "form": "lsl.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "LSL_16": {
+                "form": "lsl.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "LSL_32": {
+                "form": "lsl.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "LSL_64": {
+                "form": "lsl.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -31,6 +35,7 @@
                 "class": "Logical"
             },
             "LSLQ": {
+                "form": "lsl.{t} #{s:1-16},{r}",
                 "unsized": true,
                 "class": "Logical",
                 "opA": "SmallImmediate<1,16>"

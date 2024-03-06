@@ -6,6 +6,7 @@
     "data": {
         "opcodes": {
             "CASE": {
+                "form": "case {r}",
                 "unsized": true,
                 "varlength": true,
                 "class": "Flow",

@@ -6,6 +6,8 @@
     "data": {
         "opcodes": {
             "BCC_8": {
+                "form": "b{c},@label",
+                "comparison": true,
                 "unsized": true,
                 "class": "Flow",
                 "opA": "RegIndex",
@@ -19,6 +21,8 @@
             },
 
             "BCC_24": {
+                "form": "b{c},@label",
+                "comparison": true,
                 "unsized": true,
                 "class": "Flow",
                 "opA": "RegIndex",

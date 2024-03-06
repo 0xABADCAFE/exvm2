@@ -6,12 +6,14 @@
     "data": {
         "opcodes": {
             "BRA_8": {
+                "form": "bra @label|{d8}",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "DisplacementLow8",
                 "opB": "None"
             },
             "BRA_24": {
+                "form": "bra @label|{d24}",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "DisplacementLow8",

@@ -17,18 +17,22 @@
                 ],
                 "variants": [
                     {
+                        "form": "call @symbol",
                         "info": "Direct",
                         "opB": "SymbolIDLow4"
                     },
                     {
-                        "info": "Inirect",
+                        "form": "call ({r})",
+                        "info": "Indirect",
                         "opB": "GPRName"
                     },
                     {
+                        "form": "calln @symbol",
                         "info": "Native",
                         "opB": "SymbolIDLow4"
                     },
                     {
+                        "form": "calln ({r})",
                         "info": "Native Inirect",
                         "opB": "GPRName"
                     }

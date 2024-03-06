@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the SQRT instruction."
     },
     "data": {
         "opcodes": {
             "SQRT_F32": {
+                "form": "sqrt.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -14,6 +15,7 @@
                 "class": "Arithmetic"
             },
             "SQRT_F64": {
+                "form": "sqrt.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],

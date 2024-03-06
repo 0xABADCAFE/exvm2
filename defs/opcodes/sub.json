@@ -1,26 +1,30 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the SUB instruction."
     },
     "data": {
         "opcodes": {
             "SUB_I8": {
+                "form": "sub.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "class": "Arithmetic"
             },
             "SUB_I16": {
+                "form": "sub.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "class": "Arithmetic"
             },
             "SUB_I32": {
+                "form": "sub.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "class": "Arithmetic"
             },
             "SUB_F32": {
+                "form": "sub.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -29,12 +33,14 @@
                 "class": "Arithmetic"
             },
             "SUB_I64": {
+                "form": "sub.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "class": "Arithmetic"
             },
             "SUB_F64": {
+                "form": "sub.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -43,6 +49,7 @@
                 "class": "Arithmetic"
             },
             "SUBQ": {
+                "form": "sub.{t} {s:1-16},{r}",
                 "unsized": true,
                 "class": "Arithmetic",
                 "opA": "SmallImmediate<1,16>"

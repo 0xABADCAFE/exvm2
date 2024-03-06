@@ -1,13 +1,47 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the RSX instruction."
     },
     "data": {
         "opcodes": {
             "RSX": {
                 "unsized": true,
-                "class": "Move"
+                "variant": true,
+                "class": "Move",
+                "opA": "Empty4",
+                "opB": "VariantID",
+                "extwords": [
+                    {
+                        "opA":"ImmediateU16"
+                    }
+                ],
+                "variants": [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "extwords": [
+                            {
+                                "opA":"ImmediateU16"
+                            },
+                            {
+                                "opA":"ImmediateU16"
+                            }
+                        ]
+                    },
+                    {
+                        "extwords": [
+                            {
+                                "opA":"ImmediateU16"
+                            },
+                            {
+                                "opA":"ImmediateU16"
+                            }
+                        ]
+                    }
+                ]
             }
         }
     }

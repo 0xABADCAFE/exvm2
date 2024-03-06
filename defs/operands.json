@@ -110,7 +110,7 @@
                 "levels": ["L0", "L1", "L2", "L3"],
                 "info": "The upper 16 bits of a 20 bit symbol ID"
             },
-            "DivMode": {
+            "IDivMode": {
                 "bits": 4,
                 "levels": ["L0", "L1", "L2", "L3"],
                 "min": 0,
@@ -118,7 +118,17 @@
                 "names": [
                     "div", "mod", "divmod"
                 ],
-                "info": ""
+                "info": "Enumerated integer division/modulus type"
+            },
+            "FDivMode": {
+                "bits": 4,
+                "levels": ["L1", "L2", "L3"],
+                "min": 0,
+                "max": 3,
+                "names": [
+                    "div", "mod", "divmod", "rcp"
+                ],
+                "info": "Enumerated division/modulus/reciprocal type"
             },
             "DSXMode": {
                 "bits": 4,

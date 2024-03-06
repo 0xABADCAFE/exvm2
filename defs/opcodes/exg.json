@@ -1,14 +1,16 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the EXG instruction."
     },
     "data": {
         "opcodes": {
             "EXG_I": {
+                "form": "exg {r},{r}",
                 "unsized": true
             },
             "EXG_F": {
+                "form": "exg {f},{f}",
                 "level": "L1",
                 "unsized": true,
                 "opA": "FPRName",

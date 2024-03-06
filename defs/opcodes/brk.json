@@ -6,6 +6,7 @@
     "data": {
         "opcodes": {
             "BRK": {
+                "form": "brk #{8}",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "ImmediateU8",

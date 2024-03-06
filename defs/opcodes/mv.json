@@ -1,39 +1,45 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the MV instruction."
     },
     "data": {
         "opcodes": {
             "MV_8": {
+                "form": "mv.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true
             },
             "MV_16": {
+                "form": "mv.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true
             },
             "MV_32": {
+                "form": "mv.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true
             },
-            "MV_64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
-                "sizetype": true
-            },
             "MV_F32": {
+                "form": "mv.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
                 "opA": "FPRName",
                 "opB": "FPRName"
             },
+            "MV_64": {
+                "form": "mv.{t} {r},{r}",
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true
+            },
             "MV_F64": {
+                "form": "mv.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -41,6 +47,8 @@
                 "opB": "FPRName"
             },
             "MVC": {
+                "form": "mv{c},{r},{r}",
+                "comparison": true,
                 "unsized": true,
                 "opA": "RegIndex",
                 "opB": "RegIndex",
@@ -49,6 +57,20 @@
                         "opA": "Comparison",
                         "opB": "RegIndex",
                         "opC": "RegIndex"
+                    }
+                ]
+            },
+            "MVCF": {
+                "form": "mv{c},{f},{f}",
+                "comparison": true,
+                "unsized": true,
+                "opA": "RegIndex",
+                "opB": "RegIndex",
+                "extwords": [
+                    {
+                        "opA": "Comparison",
+                        "opB": "FPRName",
+                        "opC": "FPRName"
                     }
                 ]
             }

@@ -6,37 +6,44 @@
     "data": {
         "opcodes": {
             "AND_8": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 8 ],
-                "types": [ "i8", "u8" ],
+                "types": [ "u8", "i8" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "AND_16": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 16 ],
-                "types": [ "i16", "u16" ],
+                "types": [ "u16", "i16" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "AND_32": {
+                "form": "and.{t} {r},{r}",
                 "sizes": [ 32 ],
-                "types": [ "i32", "u32" ],
+                "types": [ "u32", "i32" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "AND_64": {
+                "form": "and.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
+                "types": [ "u64", "i64" ],
                 "sizetype": true,
                 "class": "Logical"
             },
             "ANDI": {
                 "variant": true,
+                "sizetype": true,
                 "class": "Logical",
                 "opA": "VariantID",
                 "variants": [
                     {
-                        "types": [ "i8" ],
+                        "form": "and.{t} #{z},{r}",
+                        "types": [ "u8", "i8" ],
+                        "sizes": [ 8 ],
                         "fitsize": 8,
                         "extwords": [
                             {
@@ -46,7 +53,9 @@
                         ]
                     },
                     {
-                        "types": [ "i16" ],
+                        "form": "and.{t} #{z},{r}",
+                        "types": [ "u16", "i16" ],
+                        "sizes": [ 16 ],
                         "fitsize": 16,
                         "extwords": [
                             {
@@ -55,7 +64,10 @@
                         ]
                     },
                     {
-                        "types": [ "i32" ],
+                        "form": "and.{t} #{z},{r}",
+                        "info": "32-bit target, 16-bit immediate",
+                        "types": [ "u32", "i32" ],
+                        "sizes": [ 32 ],
                         "fitsize": 16,
                         "extwords": [
                             {
@@ -64,7 +76,9 @@
                         ]
                     },
                     {
-                        "types": [ "i32" ],
+                        "form": "and.{t} #{z},{r}",
+                        "types": [ "u32", "i32" ],
+                        "sizes": [ 32 ],
                         "fitsize": 32,
                         "extwords": [
                             {
@@ -76,8 +90,11 @@
                         ]
                     },
                     {
+                        "form": "and.{t} #{z},{r}",
+                        "info": "64-bit target, 16-bit immediate",
                         "level": "L2",
-                        "types": [ "i64" ],
+                        "types": [ "u64", "i64" ],
+                        "sizes": [ 64 ],
                         "fitsize": 16,
                         "extwords": [
                             {
@@ -86,8 +103,11 @@
                         ]
                     },
                     {
+                        "form": "and.{t} #{z},{r}",
+                        "info": "64-bit target, 32-bit immediate",
                         "level": "L2",
-                        "types": [ "i64" ],
+                        "types": [ "u64", "i64" ],
+                        "sizes": [ 64 ],
                         "fitsize": 32,
                         "extwords": [
                             {
@@ -99,8 +119,10 @@
                         ]
                     },
                     {
+                        "form": "and.{t} #{z},{r}",
                         "level": "L2",
-                        "types": [ "i64" ],
+                        "types": [ "u64", "i64" ],
+                        "sizes": [ 64 ],
                         "fitsize": 64,
                         "extwords": [
                             {

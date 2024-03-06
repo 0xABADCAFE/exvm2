@@ -1,17 +1,19 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the LD instruction."
     },
     "data": {
         "opcodes": {
             "LDQ": {
+                "form": "ldq #{s:0-15},{r}",
                 "unsized": true,
                 "class": "Load",
                 "opA": "SmallImmediate"
             },
 
             "LD_8": {
+                "form": "ld.{t} @symbol,{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
@@ -24,6 +26,7 @@
                 ]
             },
             "LD_16": {
+                "form": "ld.{t} @symbol,{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
@@ -36,6 +39,7 @@
                 ]
             },
             "LD_32": {
+                "form": "ld.{t} @symbol,{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -47,20 +51,8 @@
                     }
                 ]
             },
-            "LD_64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
-                "sizetype": true,
-                "class": "Load",
-                "opA": "SymbolIDLow4",
-                "extwords": [
-                    {
-                        "opA": "SymbolIDHigh16"
-                    }
-                ]
-            },
             "LD_F32": {
+                "form": "ld.{t} @symbol,{r}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -73,7 +65,22 @@
                     }
                 ]
             },
+            "LD_64": {
+                "form": "ld.{t} @symbol,{r}",
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Load",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
             "LD_F64": {
+                "form": "ld.{t} @symbol,{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -88,6 +95,7 @@
             },
 
             "LD_DADR": {
+                "form": "lda @symbol,{r}",
                 "unsized": true,
                 "class": "Load",
                 "opA": "SymbolIDLow4",
@@ -98,6 +106,7 @@
                 ]
             },
             "LD_CSYM": {
+                "form": "ldc @symbol,{r}",
                 "unsized": true,
                 "class": "Load",
                 "opA": "SymbolIDLow4",
@@ -108,6 +117,7 @@
                 ]
             },
             "LD_NSYM": {
+                "form": "ldn @symbol,{r}",
                 "unsized": true,
                 "class": "Load",
                 "opA": "SymbolIDLow4",
@@ -124,6 +134,7 @@
                 "opA": "VariantID",
                 "variants": [
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "types": [ "i8" ],
                         "fitsize": 8,
                         "extwords": [
@@ -134,6 +145,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "types": [ "i16" ],
                         "fitsize": 16,
                         "extwords": [
@@ -143,6 +155,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "types": [ "i32" ],
                         "fitsize": 16,
                         "extwords": [
@@ -152,6 +165,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "types": [ "i32" ],
                         "fitsize": 32,
                         "extwords": [
@@ -164,6 +178,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{fz},{r}",
                         "level": "L1",
                         "types": [ "f32" ],
                         "fitsize": 32,
@@ -178,6 +193,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 16,
@@ -188,6 +204,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 32,
@@ -201,6 +218,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{z},{r}",
                         "level": "L2",
                         "types": [ "i64" ],
                         "fitsize": 64,
@@ -220,6 +238,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{fz},{r}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 32,
@@ -234,6 +253,7 @@
                         ]
                     },
                     {
+                        "form": "ld.{t} #{fz},{r}",
                         "level": "L2",
                         "types": [ "f64" ],
                         "fitsize": 64,
@@ -258,24 +278,28 @@
             },
 
             "LD_I_8": {
+                "form": "ld.{t} ({r}),{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_I_16": {
+                "form": "ld.{t} ({r}),{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_I_32": {
+                "form": "ld.{t} ({r}),{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_I_F32": {
+                "form": "ld.{t} ({r}),{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -283,6 +307,7 @@
                 "opB": "FPRName"
             },
             "LD_I_64": {
+                "form": "ld.{t} ({r}),{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -290,6 +315,7 @@
                 "class": "Load"
             },
             "LD_I_F64": {
+                "form": "ld.{t} ({r}),{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -298,65 +324,105 @@
             },
 
             "LD_ID_8": {
+                "form": "ld.{t} 16({r}),{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
-                "class": "Load"
+                "class": "Load",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
             "LD_ID_16": {
+                "form": "ld.{t} 16({r}),{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
-                "class": "Load"
+                "class": "Load",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
             "LD_ID_32": {
+                "form": "ld.{t} 16({r}),{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
-                "class": "Load"
+                "class": "Load",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
             "LD_ID_F32": {
+                "form": "ld.{t} 16({r}),{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
                 "class": "Load",
-                "opB": "FPRName"
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
             "LD_ID_64": {
+                "form": "ld.{t} 16({r}),{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
                 "sizetype": true,
-                "class": "Load"
+                "class": "Load",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
             "LD_ID_F64": {
+                "form": "ld.{t} 16({r}),{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
                 "class": "Load",
-                "opB": "FPRName"
+                "opB": "FPRName",
+                "extwords": [
+                    {
+                        "opA": "Displacement16"
+                    }
+                ]
             },
 
 
             "LD_IPD_8": {
+                "form": "ld.{t} -({r}),{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPD_16": {
+                "form": "ld.{t} -({r}),{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPD_32": {
+                "form": "ld.{t} -({r}),{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPD_F32": {
+                "form": "ld.{t} -({r}),{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -364,6 +430,7 @@
                 "opB": "FPRName"
             },
             "LD_IPD_64": {
+                "form": "ld.{t} -({r}),{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -371,6 +438,7 @@
                 "class": "Load"
             },
             "LD_IPD_F64": {
+                "form": "ld.{t} -({r}),{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -379,24 +447,28 @@
             },
 
             "LD_IPI_8": {
+                "form": "ld.{t} ({r})+,{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPI_16": {
+                "form": "ld.{t} ({r})+,{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPI_32": {
+                "form": "ld.{t} ({r})+,{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Load"
             },
             "LD_IPI_F32": {
+                "form": "ld.{t} ({r})+,{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -404,6 +476,7 @@
                 "opB": "FPRName"
             },
             "LD_IPI_64": {
+                "form": "ld.{t} ({r})+,{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -411,6 +484,7 @@
                 "class": "Load"
             },
             "LD_IPI_F64": {
+                "form": "ld.{t} ({r})+,{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -419,53 +493,56 @@
             },
 
 
-            "LD_II_8": {
-                "sizes": [ 8 ],
-                "types": [ "i8", "u8" ],
-                "sizetype": true,
+            "LD_II": {
+                "variant": true,
+                "form": "ld.{t} ({r},{r},16),{r}",
                 "class": "Load",
-                "opA": "Empty4",
+                "opA": "VariantID",
                 "extwords": [
-
+                    {
+                        "opA":"SmallImmediate<0,15>",
+                        "opB":"GPRName",
+                        "opC":"GPRName",
+                        "opD":"GPRName"
+                    }
+                ],
+                "variants":[
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "i8", "u8" ],
+                        "sizetype": true
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "i16", "u16" ],
+                        "sizetype": true
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "i32", "u32" ],
+                        "sizetype": true
+                    },
+                    {
+                        "form": "ld.{t} ({r},{r},16),{f}",
+                        "level": "L1",
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "sizetype": false
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "i64", "u64" ],
+                        "sizetype": true
+                    },
+                    {
+                        "form": "ld.{t} ({r},{r},16),{f}",
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "sizetype": false
+                    }
                 ]
-            },
-            "LD_II_16": {
-                "sizes": [ 16 ],
-                "types": [ "i16", "u16" ],
-                "sizetype": true,
-                "class": "Load",
-                "opA": "Empty4"
-            },
-            "LD_II_32": {
-                "sizes": [ 32 ],
-                "types": [ "i32", "u32" ],
-                "sizetype": true,
-                "class": "Load",
-                "opA": "Empty4"
-            },
-            "LD_II_F32": {
-                "level": "L1",
-                "sizes": [ 32 ],
-                "types": [ "f32" ],
-                "class": "Load",
-                "opA": "Empty4",
-                "opB": "FPRName"
-            },
-            "LD_II_64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
-                "sizetype": true,
-                "opA": "Empty4",
-                "class": "Load"
-            },
-            "LD_II_F64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "f64" ],
-                "class": "Load",
-                "opA": "Empty4",
-                "opB": "FPRName"
             }
         }
     }

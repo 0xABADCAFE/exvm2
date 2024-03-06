@@ -6,6 +6,7 @@
     "data": {
         "opcodes": {
             "MADD": {
+                "form": "madd.{t} {r},{r},{r},{r}",
                 "variant": true,
                 "class": "Arithmetic",
                 "opA": "Empty4",
@@ -40,6 +41,7 @@
                     },
 
                     {
+                        "form": "madd.{t} {f},{f},{f},{f}",
                         "level": "L1",
                         "types": [ "f32" ]
                     },
@@ -53,6 +55,7 @@
                         "types": [ "i64" ]
                     },
                     {
+                        "form": "madd.{t} {f},{f},{f},{f}",
                         "level": "L2",
                         "types": [ "f64" ]
                     }

@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the DBNZ instruction."
     },
     "data": {
         "opcodes": {
             "DBNZ": {
+                "form": "dbnn #{4}({r}),@label",
                 "unsized": true,
                 "class": "Flow",
                 "opA": "Empty4",

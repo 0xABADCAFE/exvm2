@@ -18,6 +18,10 @@ class Spec {
     private const DEF_OPCODES     = 'opcodes';
     private const DEF_LIST_END    = '_end';
 
+    private const MAX_VARIANTS       = 16;
+    private const EXT_WORD_SIZE      = 16;
+    private const OPERAND_FIELD_SIZE = 8;
+
     private const DEFS = [
         self::DEF_TYPES,
         self::DEF_CLASSES,
@@ -61,7 +65,92 @@ class Spec {
             count($this->aOpcodeDefs)
         );
 
-        print_r(array_keys($this->aOpcodeDefs));
+        foreach ($this->aOpcodeDefs as $sKey => $oOpcodeDef) {
+            echo $sKey, ":\n";
+            if (empty($oOpcodeDef->variants)) {
+
+                foreach ($this->expressTypedForms($oOpcodeDef) as $sForm) {
+                    echo "\t", $sForm, "\n";
+                }
+
+            } else {
+                foreach ($oOpcodeDef->variants as $oVariantDef) {
+                    foreach ($this->expressTypedForms($oVariantDef) as $sForm) {
+                        echo "\t", $sForm, " [variant ", $oVariantDef->variation, "]\n";
+                    }
+                }
+            }
+        }
+
+    }
+
+    private function expressTypedForms(\stdClass $oOpcodeDef): array {
+
+        $sExpand = str_replace(
+            [
+                '{r}',
+                '{f}',
+            ],
+            [
+                'r<N>',
+                'f<N>',
+            ],
+            $oOpcodeDef->form
+        );
+
+        $aResult = [];
+
+        if (!empty($oOpcodeDef->comparison)) {
+            foreach ($this->aComparisonDefs as $oComparison) {
+                foreach ($oComparison->types as $sType) {
+                    $sTemp = str_replace(
+                        [
+                            '{c}',
+                            '{t}', // operand type
+                        ],
+                        [
+                            $oComparison->form,
+                            (string)$sType,
+                        ],
+                        $sExpand
+                    );
+                    $aResult[] = str_replace(
+                        [
+                            '{r}',
+                            '{f}',
+                        ],
+                        [
+                            'r<N>',
+                            'f<N>',
+                        ],
+                        $sTemp
+                    );
+                }
+            }
+        } else {
+
+            $aTypes = $oOpcodeDef->types ?? [];
+            if (empty($aTypes)) {
+                return [$sExpand];
+            } else {
+                foreach ($aTypes as $sType) {
+                    $aResult[] = str_replace(
+                        [
+                            '{t}', // operand type
+                            '{z}', // shrink-fit integer immediate (may be smaller than the operand size)
+                            '{fz}' // shrink-fit float immediate (may be smaller than tye operand size)
+                        ],
+                        [
+                            (string)$sType,
+                            $oOpcodeDef->fitsize ?? "!",
+                            isset($oOpcodeDef->fitsize) ? ($oOpcodeDef->fitsize . '.0') : "!"
+                        ],
+                        $sExpand
+                    );
+                }
+            }
+        }
+        return $aResult;
     }
 
     private function loadDef(string $str_def): \stdClass {
@@ -216,15 +305,51 @@ class Spec {
             }
 
             if (empty($oOpcodeDef->unsized) && empty($oOpcodeDef->variant)) {
-                $oOpcodeDef->sizes = array_combine($oOpcodeDef->sizes, $oOpcodeDef->sizes);
-                $oOpcodeDef->types = array_combine($oOpcodeDef->types, $oOpcodeDef->types);
+                $this->associateTypes($oOpcodeDef);
             }
+
             $this->validateOpcodeDef($sOpcodeID, $oOpcodeDef);
 
             $aMerged[$sOpcodeID] = $oOpcodeDef;
+
+            if (!empty($oOpcodeDef->variants)) {
+                // Convert each variant into a fully fledged definition and validate it
+                foreach ($oOpcodeDef->variants as $iVariantID => $oVariantPartDef) {
+                    $oVariantDef = clone $oOpcodeDef;
+                    unset($oVariantDef->variants);
+                    unset($oVariantDef->variant);
+                    $oVariantDef->variation = $iVariantID;
+
+                    foreach ($oVariantPartDef as $sKey => $mValue) {
+                        $oVariantDef->{$sKey} = $mValue;
+                    }
+
+                    if (empty($oVariantDef->unsized)) {
+                        $this->associateTypes($oVariantDef);
+                    }
+
+                    $this->validateOpcodeDef($sOpcodeID, $oVariantDef);
+
+                    // Replace the part definition with the full, validated version
+                    $oOpcodeDef->variants[$iVariantID] = $oVariantDef;
+                }
+            }
+
         }
 
         return $aMerged;
+    }
+
+    private function associateTypes(\stdClass $oOpcodeDef) {
+        if (!empty($oOpcodeDef->sizes)) {
+            $oOpcodeDef->sizes = array_combine($oOpcodeDef->sizes, $oOpcodeDef->sizes);
+        }
+        if (!empty($oOpcodeDef->types)) {
+            $oOpcodeDef->types = array_combine($oOpcodeDef->types, $oOpcodeDef->types);
+        }
+        if (!empty($oOpcodeDef->sizetype)) {
+            $oOpcodeDef->types = $oOpcodeDef->sizes + $oOpcodeDef->types;
+        }
     }
 
     private function validateOperandSet(array $aOperands, int $iSize, int &$iVariantDefCount) {
@@ -253,13 +378,13 @@ class Spec {
                 $oOpcodeDef->opA ?? null,
                 $oOpcodeDef->opB ?? null
             ],
-            8,
+            self::OPERAND_FIELD_SIZE,
             $iVariantDefCount
         );
 
         if (!empty($oOpcodeDef->extwords)) {
             foreach ($oOpcodeDef->extwords as $oOperandSet) {
-                $this->validateOperandSet((array)$oOperandSet, 16, $iVariantDefCount);
+                $this->validateOperandSet((array)$oOperandSet, self::EXT_WORD_SIZE, $iVariantDefCount);
             }
         }
 
@@ -267,7 +392,7 @@ class Spec {
             if (empty($oOpcodeDef->variants) || !is_array($oOpcodeDef->variants)) {
                 throw new RuntimeException('Missing/Invalid variants definition for ' . $sOpcodeID);
             }
-            if (count($oOpcodeDef->variants) > 16) {
+            if (count($oOpcodeDef->variants) > self::MAX_VARIANTS) {
                 throw new RuntimeException('Too many variant definitions for ' . $sOpcodeID);
             }
         }

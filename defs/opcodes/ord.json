@@ -1,26 +1,30 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the ORD instruction."
     },
     "data": {
         "opcodes": {
             "ORD_I8": {
+                "form": "ord.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "class": "Arithmetic"
             },
             "ORD_I16": {
+                "form": "ord.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "class": "Arithmetic"
             },
             "ORD_I32": {
+                "form": "ord.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "class": "Arithmetic"
             },
             "ORD_F32": {
+                "form": "ord.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -29,12 +33,14 @@
                 "class": "Arithmetic"
             },
             "ORD_I64": {
+                "form": "ord.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "class": "Arithmetic"
             },
             "ORD_F64": {
+                "form": "ord.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],

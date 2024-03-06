@@ -1,11 +1,12 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the ST instruction."
     },
     "data": {
         "opcodes": {
             "ST_8": {
+                "form": "st.{t} {r},@symbol",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
@@ -18,6 +19,7 @@
                 ]
             },
             "ST_16": {
+                "form": "st.{t} {r},@symbol",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
@@ -30,6 +32,7 @@
                 ]
             },
             "ST_32": {
+                "form": "st.{t} {r},@symbol",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
@@ -41,20 +44,8 @@
                     }
                 ]
             },
-            "ST_64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
-                "sizetype": true,
-                "class": "Store",
-                "opA": "SymbolIDLow4",
-                "extwords": [
-                    {
-                        "opA": "SymbolIDHigh16"
-                    }
-                ]
-            },
             "ST_F32": {
+                "form": "st.{t} {f},@symbol",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -67,7 +58,22 @@
                     }
                 ]
             },
+            "ST_64": {
+                "form": "st.{t} {r},@symbol",
+                "level": "L2",
+                "sizes": [ 64 ],
+                "types": [ "i64", "u64" ],
+                "sizetype": true,
+                "class": "Store",
+                "opA": "SymbolIDLow4",
+                "extwords": [
+                    {
+                        "opA": "SymbolIDHigh16"
+                    }
+                ]
+            },
             "ST_F64": {
+                "form": "st.{t} {f},@symbol",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -82,24 +88,28 @@
             },
 
             "ST_I_8": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_I_16": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_I_32": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_I_F32": {
+                "form": "st.{t} {f},({r})",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -107,6 +117,7 @@
                 "opB": "FPRName"
             },
             "ST_I_64": {
+                "form": "st.{t} {r},({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -114,6 +125,7 @@
                 "class": "Store"
             },
             "ST_I_F64": {
+                "form": "st.{t} {f},({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -122,24 +134,28 @@
             },
 
             "ST_ID_8": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_ID_16": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_ID_32": {
+                "form": "st.{t} {r},({r})",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_ID_F32": {
+                "form": "st.{t} {f},({r})",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -147,6 +163,7 @@
                 "opB": "FPRName"
             },
             "ST_ID_64": {
+                "form": "st.{t} {r},({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -154,6 +171,7 @@
                 "class": "Store"
             },
             "ST_ID_F64": {
+                "form": "st.{t} {f},({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -162,24 +180,28 @@
             },
 
             "ST_IPD_8": {
+                "form": "st.{t} {r},-({r})",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPD_16": {
+                "form": "st.{t} {r},-({r})",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPD_32": {
+                "form": "st.{t} {r},-({r})",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPD_F32": {
+                "form": "st.{t} {f},-({r})",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -187,6 +209,7 @@
                 "opB": "FPRName"
             },
             "ST_IPD_64": {
+                "form": "st.{t} {r},-({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -194,6 +217,7 @@
                 "class": "Store"
             },
             "ST_IPD_F64": {
+                "form": "st.{t} {f},-({r})",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -202,24 +226,28 @@
             },
 
             "ST_IPI_8": {
+                "form": "st.{t} {r},({r})+",
                 "sizes": [ 8 ],
                 "types": [ "i8", "u8" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPI_16": {
+                "form": "st.{t} {r},({r})+",
                 "sizes": [ 16 ],
                 "types": [ "i16", "u16" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPI_32": {
+                "form": "st.{t} {r},({r})+",
                 "sizes": [ 32 ],
                 "types": [ "i32", "u32" ],
                 "sizetype": true,
                 "class": "Store"
             },
             "ST_IPI_F32": {
+                "form": "st.{t} {f},({r})+",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -227,6 +255,7 @@
                 "opB": "FPRName"
             },
             "ST_IPI_64": {
+                "form": "st.{t} {r},({r})+",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64", "u64" ],
@@ -234,6 +263,7 @@
                 "class": "Store"
             },
             "ST_IPI_F64": {
+                "form": "st.{t} {f},({r})+",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],
@@ -242,55 +272,57 @@
             },
 
 
-            "ST_II_8": {
-                "sizes": [ 8 ],
-                "types": [ "i8", "u8" ],
-                "sizetype": true,
+            "ST_II": {
+                "variant": true,
+                "form": "st.{t} {r},({r},{r},16)",
                 "class": "Store",
-                "opA": "Empty4",
+                "opA": "VariantID",
                 "extwords": [
-
+                    {
+                        "opA":"SmallImmediate<0,15>",
+                        "opB":"GPRName",
+                        "opC":"GPRName",
+                        "opD":"GPRName"
+                    }
+                ],
+                "variants":[
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "i8", "u8" ],
+                        "sizetype": true
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "i16", "u16" ],
+                        "sizetype": true
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "i32", "u32" ],
+                        "sizetype": true
+                    },
+                    {
+                        "form": "st.{t} {f},({r},{r},16)",
+                        "level": "L1",
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "sizetype": false
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "i64", "u64" ],
+                        "sizetype": true
+                    },
+                    {
+                        "form": "st.{t} {f},({r},{r},16)",
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "sizetype": false
+                    }
                 ]
-            },
-            "ST_II_16": {
-                "sizes": [ 16 ],
-                "types": [ "i16", "u16" ],
-                "sizetype": true,
-                "class": "Store",
-                "opA": "Empty4"
-            },
-            "ST_II_32": {
-                "sizes": [ 32 ],
-                "types": [ "i32", "u32" ],
-                "sizetype": true,
-                "class": "Store",
-                "opA": "Empty4"
-            },
-            "ST_II_F32": {
-                "level": "L1",
-                "sizes": [ 32 ],
-                "types": [ "f32" ],
-                "class": "Store",
-                "opA": "Empty4",
-                "opB": "FPRName"
-            },
-            "ST_II_64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "i64", "u64" ],
-                "sizetype": true,
-                "opA": "Empty4",
-                "class": "Store"
-            },
-            "ST_II_F64": {
-                "level": "L2",
-                "sizes": [ 64 ],
-                "types": [ "f64" ],
-                "class": "Store",
-                "opA": "Empty4",
-                "opB": "FPRName"
             }
-
         }
     }
 }

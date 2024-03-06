@@ -16,21 +16,25 @@
                 ],
                 "variants": [
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "sizetype": true,
                         "sizes": [ 8 ],
                         "types": [ "i8", "u8" ]
                     },
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "sizetype": true,
                         "sizes": [ 16 ],
                         "types": [ "i16", "u16" ]
                     },
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "sizetype": true,
                         "sizes": [ 32 ],
                         "types": [ "i32", "u32" ]
                     },
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "level": "L1",
                         "sizetype": false,
                         "sizes": [ 32 ],
@@ -38,12 +42,14 @@
                         "opB": "FPRName"
                     },
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "level": "L2",
                         "sizetype": true,
                         "sizes": [ 64 ],
                         "types": [ "i64", "u64" ]
                     },
                     {
+                        "form": "bnz.{t} {r},@label|{d16}",
                         "level": "L2",
                         "sizetype": false,
                         "sizes": [ 64 ],

@@ -1,26 +1,30 @@
 {
     "info": {
         "version": "0.0.0",
-        "description": "Opodes for the ABS instruction."
+        "description": "Opodes for the NEG instruction."
     },
     "data": {
         "opcodes": {
             "NEG_I8": {
+                "form": "neg.{t} {r},{r}",
                 "sizes": [ 8 ],
                 "types": [ "i8" ],
                 "class": "Arithmetic"
             },
             "NEG_I16": {
+                "form": "neg.{t} {r},{r}",
                 "sizes": [ 16 ],
                 "types": [ "i16" ],
                 "class": "Arithmetic"
             },
             "NEG_I32": {
+                "form": "neg.{t} {r},{r}",
                 "sizes": [ 32 ],
                 "types": [ "i32" ],
                 "class": "Arithmetic"
             },
             "NEG_F32": {
+                "form": "neg.{t} {f},{f}",
                 "level": "L1",
                 "sizes": [ 32 ],
                 "types": [ "f32" ],
@@ -29,12 +33,14 @@
                 "class": "Arithmetic"
             },
             "NEG_I64": {
+                "form": "neg.{t} {r},{r}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "i64" ],
                 "class": "Arithmetic"
             },
             "NEG_F64": {
+                "form": "neg.{t} {f},{f}",
                 "level": "L2",
                 "sizes": [ 64 ],
                 "types": [ "f64" ],

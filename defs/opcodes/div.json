@@ -1,0 +1,93 @@
+{
+    "info": {
+        "version": "0.0.0",
+        "description": "Opodes for the DIV instruction."
+    },
+    "data": {
+        "opcodes": {
+            "DIV": {
+                "variant": true,
+                "class": "Arithmetic",
+                "opA": "GPRName",
+                "opB": "GPRName",
+                "extwords": [
+                    {
+                        "opA": "IDivMode",
+                        "opB": "VariantID",
+                        "opC": "GPRName",
+                        "opD": "GPRName"
+                    }
+                ],
+                "variants": [
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "u8" ]
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "u16" ]
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "u32" ]
+                    },
+
+                    {
+                        "sizes": [ 8 ],
+                        "types": [ "i8" ]
+                    },
+                    {
+                        "sizes": [ 16 ],
+                        "types": [ "i16" ]
+                    },
+                    {
+                        "sizes": [ 32 ],
+                        "types": [ "i32" ]
+                    },
+
+                    {
+                        "level": "L1",
+                        "sizes": [ 32 ],
+                        "types": [ "f32" ],
+                        "opA": "FPRName",
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "FDivMode",
+                                "opB": "VariantID",
+                                "opC": "FPRName",
+                                "opD": "FPRName"
+                            }
+                        ]
+                    },
+
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "u64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "i64" ]
+                    },
+                    {
+                        "level": "L2",
+                        "sizes": [ 64 ],
+                        "types": [ "f64" ],
+                        "opA": "FPRName",
+                        "opB": "FPRName",
+                        "extwords": [
+                            {
+                                "opA": "FDivMode",
+                                "opB": "VariantID",
+                                "opC": "FPRName",
+                                "opD": "FPRName"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
